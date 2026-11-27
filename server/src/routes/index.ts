@@ -78,7 +78,7 @@ router.post("/chat", rateLimit(20, 60_000), async (req, res, next) => {
 router.post("/chat/confirm", rateLimit(20, 60_000), async (req, res, next) => {
   try {
     const { actionId } = z.object({ actionId: z.string().min(1) }).parse(req.body);
-    const result = confirmAction(actionId);
+    const result = await confirmAction(actionId);
     res.json({ ok: !result.output.startsWith("ERROR:"), output: result.output });
   } catch (e) { next(e); }
 });

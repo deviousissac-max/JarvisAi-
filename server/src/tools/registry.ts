@@ -98,7 +98,7 @@ export async function executeTool(name: string, args: any): Promise<ToolResult> 
   }
 }
 
-export function confirmAction(actionId: string): ToolResult {
+export async function confirmAction(actionId: string): Promise<ToolResult> {
   const p = pending.get(actionId);
   if (!p) return fail("Confirmation expired or unknown. Ask the user to restate the request.");
   pending.delete(actionId);
