@@ -1,0 +1,6 @@
+server/.env
+server/data/
+node_modules/
+app/dist/
+server/dist/
+.DS_Store
