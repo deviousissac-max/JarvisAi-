@@ -8,7 +8,7 @@ export interface AppState {
   selectSession: (id: string) => void;
   deleteSession: (id: string) => void;
   addMessage: (role: "user" | "assistant", text: string, error?: boolean) => string;
-  updateMessage: (id: string, text: string) => void;
+  updateMessage: (id: string, text: string, error?: boolean) => void;
   activeSession: () => Persisted["sessions"][number] | null;
 }
 
