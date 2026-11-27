@@ -4,7 +4,7 @@
   "engines": { "node": ">=20" },
   "scripts": {
     "install:all": "npm --prefix server install && npm --prefix app install",
-    "build": "npm --prefix app run build && npm --prefix server run build",
+    "build": "node scripts/fetch-icons.mjs && npm --prefix app run build && npm --prefix server run build",
     "start": "cd server && node dist/index.js"
   }
 }
