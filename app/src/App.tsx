@@ -86,11 +86,11 @@ export function App() {
       });
       return id;
     },
-    updateMessage: (id, text) => setPersist((p) => ({
+    updateMessage: (id, text, error) => setPersist((p) => ({
       ...p,
       sessions: p.sessions.map((s) =>
         s.id === p.activeSessionId
-          ? { ...s, messages: s.messages.map((m) => (m.id === id ? { ...m, text } : m)) }
+          ? { ...s, messages: s.messages.map((m) => (m.id === id ? { ...m, text, error } : m)) }
           : s
       ),
     })),
