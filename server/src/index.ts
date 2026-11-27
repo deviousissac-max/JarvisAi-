@@ -3,7 +3,7 @@ import path from "node:path";
 import { existsSync } from "node:fs";
 import { config } from "./config.js";
 import { errorHandler, auth as authMiddleware, rateLimit } from "./middleware.js";
-import router from "./routes/index.js";
+import { router } from "./routes/index.js";
 
 const app = express();
 app.disable("x-powered-by");
